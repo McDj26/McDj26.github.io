@@ -1,0 +1,22 @@
+h1 {
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+}
+h2 {
+  color: white;
+  font-size: 24px;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-color: black;
+}
