@@ -7,6 +7,9 @@
   }
 }
 @media screen and (min-width: 1100px) {
+  .header {
+    padding: 0 100px;
+  }
   .header-nav > li:first-child {
     display: none;
   }
