@@ -1,0 +1,252 @@
+/* 开发时的基准屏宽为10rem，并将39px设为基准屏宽的10份之一（1rem） */
+
+/* #region 基本设置 */
+.l-fix {
+  float: left;
+}
+.r-fix {
+  float: right;
+}
+.clear-fix {
+  clear: both;
+}
+:root {
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+:root:-webkit-scrollbar {
+  display: none;
+}
+.bg-image {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  animation: bg-animate 15s infinite alternate;
+  animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+@keyframes bg-animate {
+  0% {
+    background-image: url("../../assets/images/bg/bg-mobile-1.jpg");
+  }
+  100% {
+    background-image: url("../../assets/images/bg/bg-mobile-2.jpg");
+  }
+}
+.container-fluid {
+  padding: 0 0.3846rem;
+}
+* {
+  user-select: none;
+}
+/* #endregion 基本设置 */
+
+/* #region 顶栏 */
+header {
+  height: 2.5641rem;
+  position: sticky;
+  top: -1.7949rem;
+  z-index: 1000;
+  background-image: linear-gradient(
+    190deg,
+    rgba(196, 1, 212, 0.55) 33%,
+    rgba(1, 182, 212, 0.35) 100%
+  );
+}
+header h1 {
+  margin: 0.7692rem 0 0 0.5128rem;
+  font-size: 0.6154rem;
+  color: white;
+}
+.header-nav {
+  position: relative;
+  margin: 0.7692rem 0.5128rem 0 0;
+  width: 0.6154rem;
+  height: 0.6154rem;
+}
+.header-nav img {
+  vertical-align: top;
+  width: 0.6154rem;
+}
+.header-nav .menu-btn {
+  position: relative;
+  z-index: 1001;
+}
+.header-nav .menu-wrapper {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  /* ! 确保不会透过遮罩点击到下方元素 */
+  pointer-events: all;
+  z-index: 1000;
+}
+.menu-wrapper .menu-mask {
+  position: absolute;
+  top: 1.0769rem;
+  right: 0.8205rem;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all 0.5s linear;
+  border-radius: 30rem;
+}
+.menu-wrapper .display-menu-mask {
+  top: -28.9231rem;
+  right: -29.1795rem;
+  width: 60rem;
+  height: 60rem;
+}
+.menu-wrapper .menu {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 2.5641rem;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+.menu-wrapper .display-menu {
+  display: flex;
+}
+.menu-wrapper .menu li {
+  height: 1.2821rem;
+}
+.menu-wrapper img {
+  height: 1.2821rem;
+}
+.header-nav-list {
+  position: absolute;
+  bottom: 0.1026rem;
+  display: flex;
+  list-style: none;
+  padding: 0 0.5128rem;
+  margin: 0;
+  overflow: hidden;
+}
+.header-nav-list li {
+  display: flex;
+  align-items: center;
+  height: 0.5128rem;
+}
+.header-nav-list li a {
+  font-size: 0.359rem;
+  color: white;
+}
+.activated-header-nav {
+  transform: scale(1.2);
+}
+.header-nav-list li a:hover {
+  text-decoration: none;
+}
+.header-nav-list li + li {
+  margin-left: 0.5128rem;
+}
+.header-slider {
+  position: absolute;
+  bottom: 0;
+  left: 0.5128rem;
+  height: 0.0513rem;
+  width: 0.7179rem;
+  border-radius: 0.0256rem;
+  background-color: white;
+  transition: all 0.3s;
+}
+/* #endregion 顶栏 */
+
+/* #region 主体 */
+main {
+  display: flex;
+}
+.carousel-wrapper {
+  position: relative;
+  margin-top: 0.5128rem;
+  height: 5.1282rem;
+  border-radius: 0.2564rem;
+  overflow: hidden;
+  touch-action: none;
+}
+.carousel-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.carousel-trans {
+  transition: all 0.5s;
+}
+.carousel-list-item {
+  display: flex;
+  align-items: center;
+  width: 9.241rem;
+}
+.carousel-list-item img {
+  width: 100%;
+  object-fit: cover;
+}
+.posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.posts-list li {
+  height: 3.0769rem;
+  padding: 0;
+  margin: 0.5128rem 0 0 0;
+}
+.posts-list li a {
+  color: black;
+}
+.posts-list li a:hover {
+  color: black;
+  text-decoration: none;
+}
+.posts-list li:nth-of-type(2n) {
+  padding-left: 0.2564rem;
+}
+.posts-list li:nth-of-type(2n + 1) {
+  padding-right: 0.2564rem;
+}
+.posts-list li .card {
+  width: 100%;
+  height: 100%;
+}
+.posts-list .card-img-top {
+  height: 2.2564rem;
+  object-fit: cover;
+  object-position: center;
+}
+.posts-list li .card-body {
+  padding: 0 0.2564rem;
+}
+.posts-list li .card-title {
+  font-size: 0.359rem;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.posts-list li .card-text {
+  font-size: 0.2564rem;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* #endregion 主体 */

@@ -8,6 +8,25 @@
 .clear-fix {
   clear: both;
 }
+.bg-image {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  animation: bg-animate 15s infinite alternate;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+@keyframes bg-animate {
+  0% {
+    background-image: url("../../assets/images/bg/bg-1.jpg");
+  }
+  100% {
+    background-image: url("../../assets/images/bg/bg-2.jpg");
+  }
+}
 /* #endregion基础设置 */
 
 /* #region顶栏 */
@@ -73,27 +92,6 @@
 
 /* #region主体 */
 /* #region推荐 */
-.bg-image {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  animation: bg-animate 30s infinite;
-  background-size: cover;
-  z-index: -1;
-}
-@keyframes bg-animate {
-  0% {
-    background-image: url("../images/bg/bg-1.jpg");
-  }
-  50% {
-    background-image: url("../images/bg/bg-2.jpg");
-  }
-  100% {
-    background-image: url("../images/bg/bg-1.jpg");
-  }
-}
 .recommend {
   margin: 20px auto;
   height: calc(100vh - 240px);
