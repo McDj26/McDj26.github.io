@@ -24,7 +24,7 @@ jobs:
           cd ./myHomePage
           pnpm install
           pnpm run generate
-          cp -r ./.output/public ../docs
+          cp -r ./.output/public ../build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
