@@ -24,9 +24,12 @@ jobs:
           cd ./myHomePage
           pnpm install
           pnpm run generate
-          cp -r ./.output/public ../build
+        env:
+          ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          REPOLIST_API_TOKEN: ${{ secrets.REPOLIST_API_TOKEN }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build # The folder the action should deploy.
+          folder: ./myHomePage/.output/public # The folder the action should deploy.

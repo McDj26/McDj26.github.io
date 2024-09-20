@@ -1,0 +1,16 @@
+%box {
+  box-sizing: border-box;
+}
+
+%flex-box {
+  @extend %box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%list-normal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
